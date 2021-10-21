@@ -1,0 +1,14 @@
+*.xcuserstate
+xcuserdata
+*/.DS_Store
+.DS_Store
+project.xcworkspace
+*.xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate
+DerivedData/
+*.xcodeproj/xcuserdata
+*xcworkspace/xcuserdata/*
+*/xcuserdata/*

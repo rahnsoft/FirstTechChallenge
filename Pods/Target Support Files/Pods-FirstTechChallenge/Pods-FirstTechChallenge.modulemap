@@ -1,0 +1,6 @@
+module Pods_FirstTechChallenge {
+  umbrella header "Pods-FirstTechChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
