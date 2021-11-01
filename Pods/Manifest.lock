@@ -1,22 +1,42 @@
 PODS:
+  - Alamofire (5.4.3)
+  - EzPopup (1.2)
+  - IQKeyboardManagerSwift (6.5.6)
   - JVFloatLabeledTextField (1.2.2)
+  - Kingfisher (6.3.0)
+  - SideMenu (6.5.0)
   - SwiftMessages (9.0.2):
     - SwiftMessages/App (= 9.0.2)
   - SwiftMessages/App (9.0.2)
 
 DEPENDENCIES:
+  - Alamofire
+  - EzPopup
+  - IQKeyboardManagerSwift
   - JVFloatLabeledTextField
+  - Kingfisher
+  - SideMenu
   - SwiftMessages
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - EzPopup
+    - IQKeyboardManagerSwift
     - JVFloatLabeledTextField
+    - Kingfisher
+    - SideMenu
     - SwiftMessages
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  EzPopup: 989ac21992a82ad6d1245c747a78bf3833279ef0
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   JVFloatLabeledTextField: df48598472ee015701d509f43e59492a0d4ca208
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftMessages: 77b847d1405f99046ffbd0d856bc7d73e6892686
 
-PODFILE CHECKSUM: fee653b33f51050226c3f49adbe52d23f429b132
+PODFILE CHECKSUM: 00505bcb5be4d55ac559458961060eea35ebec0b
 
 COCOAPODS: 1.10.1

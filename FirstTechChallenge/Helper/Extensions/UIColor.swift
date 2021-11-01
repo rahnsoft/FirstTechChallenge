@@ -16,7 +16,15 @@ extension UIColor {
     static var textColor: UIColor {
         return UIColor(hexString: "3E425F")
     }
-
+    
+    static var greenPrimaryColor: UIColor {
+        return UIColor(hexString: "00824F")
+    }
+    
+    static var paleGray: UIColor {
+        return UIColor(hexString: "F5F5F5")
+    }
+    
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt64()

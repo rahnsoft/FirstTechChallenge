@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TeamDetails" representedClassName=".TeamDetails" syncable="YES" codeGenerationType="class">
+        <attribute name="isShareDetails" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="teamName" attributeType="String"/>
+        <attribute name="teamNumber" attributeType="String" maxValueString="5"/>
+        <attribute name="teamPassword" attributeType="String"/>
+        <attribute name="teamRegion" optional="YES" attributeType="String"/>
+        <attribute name="teamRobotName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TeamLoginDetails" representedClassName=".TeamLoginDetails" syncable="YES" codeGenerationType="class">
+        <attribute name="isShareDetails" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="loginPassword" optional="YES" attributeType="String"/>
+        <attribute name="loginRobotName" optional="YES" attributeType="String"/>
+        <attribute name="loginTeamName" optional="YES" attributeType="String"/>
+        <attribute name="loginTeamNumber" optional="YES" attributeType="String"/>
+        <attribute name="loginTeamRegion" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TeamScores" representedClassName="TeamScores" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="round" optional="YES" attributeType="String"/>
+        <attribute name="scoreLocation" optional="YES" attributeType="String"/>
+        <attribute name="scoreTeamNumber" optional="YES" attributeType="String"/>
+        <attribute name="stage1Score" optional="YES" attributeType="String"/>
+        <attribute name="stage2Score" optional="YES" attributeType="String"/>
+        <attribute name="stage3Score" optional="YES" attributeType="String"/>
+        <attribute name="totalScore" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="TeamDetails" positionX="-394.5564575195312" positionY="-89.57830810546875" width="128" height="119"/>
+        <element name="TeamLoginDetails" positionX="-54" positionY="-18" width="128" height="119"/>
+        <element name="TeamScores" positionX="-225" positionY="27" width="128" height="149"/>
+    </elements>
+</model>

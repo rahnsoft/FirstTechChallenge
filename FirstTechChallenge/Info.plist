@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location access in background enables the app to be fully functional and allows the drivers to know your exact location even not using the app</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location access in background enables the app to be fully functional and allows the drivers to know your exact location even not using the app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location access in background enables the app to be fully functional and allows the drivers to know your exact location even not using the app</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to access your photo gallery for your profile photo upload. Your photos wont be shared without your permission.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) would like to access your camera for your profile photo upload. Your photos wont be shared without your permission.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -22,6 +36,11 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-SemiBold.ttf</string>

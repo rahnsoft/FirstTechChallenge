@@ -1,4 +1,4 @@
-module Pods_FirstTechChallenge {
+framework module Pods_FirstTechChallenge {
   umbrella header "Pods-FirstTechChallenge-umbrella.h"
 
   export *

@@ -7,11 +7,12 @@
 
 import Foundation
 import UIKit
-extension UILabel {
-    func styleForTitleView(titleUpperCased: Bool = true,
-                           _ title: String,
-                           appBoldFont: CGFloat = 20,
-                           titleColor: UIColor = .textColor)
+extension UILabel
+{
+    func styleForAttributedTitleView(titleUpperCased: Bool = true,
+                                     _ title: String,
+                                     appBoldFont: CGFloat = 20,
+                                     titleColor: UIColor = .textColor)
     {
         textAlignment = .left
         let localised = title.localize.isEmpty ? title : titleUpperCased ? title.localize.uppercased() : title.localize
@@ -22,6 +23,19 @@ extension UILabel {
         attributedText = att
         sizeToFit()
         adjustsFontSizeToFitWidth = true
+    }
+
+    func styleForTitleView(titleUpperCased: Bool = true,
+                           appBoldFont: CGFloat = 20,
+                           titleColor: UIColor = .textColor,
+                           align: NSTextAlignment = .natural)
+    {
+        textAlignment = align
+        textColor = titleColor
+        font = UIFont.appSemiBoldFont(ofSize: appBoldFont)
+        contentMode = .scaleAspectFit
+        sizeToFit()
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
     func setCustomUILabelStyle(_textColor: UIColor = .textColor,
@@ -37,6 +51,21 @@ extension UILabel {
         adjustsFontSizeToFitWidth = adjustsFontsizeToWidth
         contentMode = .scaleAspectFit
         sizeToFit()
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    func setupLabel(_textColor: UIColor = .textColor,
+                    havaConstantsFont: CGFloat = HavaConstants.DEFAULT_FONT_SIZE,
+                    adjustsFontsizeToWidth: Bool = false,
+                    textAlign: NSTextAlignment = .natural,
+                    _font: UIFont = UIFont.appFont(ofSize: HavaConstants.DEFAULT_PADDING))
+    {
+        textAlignment = textAlign
+        textColor = _textColor
+        font = _font
+        adjustsFontSizeToFitWidth = adjustsFontsizeToWidth
+        contentMode = .scaleAspectFit
+        numberOfLines = .zero
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

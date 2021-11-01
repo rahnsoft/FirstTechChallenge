@@ -6,12 +6,16 @@
 //
 
 import CoreData
+import IQKeyboardManagerSwift
 import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 50
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         window = UIWindow(frame: UIScreen.main.bounds)
         checkLogin()
         return true
@@ -19,8 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func checkLogin() {
         let nav1 = UINavigationController(rootViewController: WelcomeViewController())
-        let nav2 = UINavigationController(rootViewController: RegistrationViewController())
-        if UserDefaults.standard.bool(forKey: "isRegistered") {
+        let nav2 = UINavigationController(rootViewController: stage1ViewController())
+        let nav3 = UINavigationController(rootViewController: FeedBackViewController())
+        APIHelper.shared.fetchLoginDetails { _ in }
+        if APIHelper.shared.getSavedTeam() != nil {
             makeRootViewController(nav2)
         } else {
             makeRootViewController(nav1)
@@ -30,8 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Make rootViewController
 
-    func makeRootViewController(_ viewController: UIViewController?) {
-        window?.rootViewController = viewController
+    func makeRootViewController(_ viewController: UIViewController?, withAnimation: Bool = false) {
+        if withAnimation {
+            UIView.transition(with: (appDelegate?.window)!, duration: 0.7, options: .transitionFlipFromRight) {
+                self.window?.rootViewController = viewController
+            }
+        } else {
+            window?.rootViewController = viewController
+        }
     }
 
     // MARK: - Core Data stack

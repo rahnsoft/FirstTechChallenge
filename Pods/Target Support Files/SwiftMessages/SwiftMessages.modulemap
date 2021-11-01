@@ -1,4 +1,4 @@
-module SwiftMessages {
+framework module SwiftMessages {
   umbrella header "SwiftMessages-umbrella.h"
 
   export *
