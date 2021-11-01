@@ -30,9 +30,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        ErrorToast(error.localizedDescription)
-    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {}
 }
 
 extension CLLocation {
