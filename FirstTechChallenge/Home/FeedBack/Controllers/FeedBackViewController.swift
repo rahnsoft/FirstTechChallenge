@@ -186,6 +186,7 @@ class FeedBackViewController: UIViewController, ImageUploaded, UIGestureRecogniz
                                 }
                                 ErrorToast(message ?? "")
                             }
+                            UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()
                         } catch {}
                     }
                     UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()

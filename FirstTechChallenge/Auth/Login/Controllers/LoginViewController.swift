@@ -161,6 +161,7 @@ class LoginViewController: UIViewController {
                     } else {
                         ErrorToast(message)
                     }
+                    UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()
                 }
             } else {
                 ErrorToast(error!.localizedDescription)

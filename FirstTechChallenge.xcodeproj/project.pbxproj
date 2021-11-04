@@ -77,6 +77,7 @@
 		BBB320C0272FF82E00D50C46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB320BF272FF82E00D50C46 /* LocationManager.swift */; };
 		BBB320C32730287600D50C46 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = BBB320C22730287600D50C46 /* NVActivityIndicatorView */; };
 		BBB320C52730287600D50C46 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = BBB320C42730287600D50C46 /* NVActivityIndicatorViewExtended */; };
+		BBB320D427311EB900D50C46 /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB320D327311EB900D50C46 /* InternetConnectionManager.swift */; };
 		BBEBC3612722D8E300F1E8DF /* TeamRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBC3602722D8E300F1E8DF /* TeamRegistrationModel.swift */; };
 		DF48A997FD2E0AFA2CF929E8 /* Pods_FirstTechChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A081D8DBC5398F0EAA7054 /* Pods_FirstTechChallenge.framework */; };
 /* End PBXBuildFile section */
@@ -163,6 +164,7 @@
 		BBB320B5272F772A00D50C46 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		BBB320B6272F772A00D50C46 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		BBB320BF272FF82E00D50C46 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BBB320D327311EB900D50C46 /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
 		BBEBC3602722D8E300F1E8DF /* TeamRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRegistrationModel.swift; sourceTree = "<group>"; };
 		CA9DFF687918804227CBB72E /* Pods-FirstTechChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstTechChallenge.debug.xcconfig"; path = "Target Support Files/Pods-FirstTechChallenge/Pods-FirstTechChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		DC6593EE895FDE811D32DD7D /* Pods-FirstTechChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstTechChallenge.release.xcconfig"; path = "Target Support Files/Pods-FirstTechChallenge/Pods-FirstTechChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				BB9C3C00271DEA08007D1704 /* APIHelper.swift */,
 				BBB320BF272FF82E00D50C46 /* LocationManager.swift */,
 				BB9C3BF8271DE7E1007D1704 /* HavaConstants.swift */,
+				BBB320D327311EB900D50C46 /* InternetConnectionManager.swift */,
 			);
 			path = APIHelper;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				BB9C3C41271FFA72007D1704 /* RegistrationViewController.swift in Sources */,
 				BBB320B9272F772B00D50C46 /* WebViewController.swift in Sources */,
 				BBB320A1272DFEAB00D50C46 /* FeedBackViewController.swift in Sources */,
+				BBB320D427311EB900D50C46 /* InternetConnectionManager.swift in Sources */,
 				BB9C3C01271DEA08007D1704 /* APIHelper.swift in Sources */,
 				BBB3208D272CA9BE00D50C46 /* Stage2ViewController.swift in Sources */,
 				BB9C3BF7271DE661007D1704 /* UIColor.swift in Sources */,

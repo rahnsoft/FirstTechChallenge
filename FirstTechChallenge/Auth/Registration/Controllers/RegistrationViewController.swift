@@ -99,7 +99,6 @@ class RegistrationViewController: UIViewController {
                     self.tableView.reloadData()
                 } else {
                     self.teamRegion = "Not found"
-                    ErrorToast(error!.localizedDescription)
                 }
             }
         }
@@ -123,9 +122,9 @@ class RegistrationViewController: UIViewController {
         } else if confirmPassword != teamPassword {
             ErrorToast("Confirm password didn't match!")
         } else {
-            UIApplication.shared.keyWindow?.startBlockingActivityIndicator()
             let team = TeamRegistrationModel(teamName: teamName, teamNumber: teamNumber, teamRobotName: teamRobotName, teamRegion: teamRegion, teamPassword: confirmPassword, isShareDetails: isShareToggle.isOn)
             APIHelper.shared.createTeam(teamid: teamNumber, name: teamName, location: teamRegion ?? "") { data, _ in
+                UIApplication.shared.keyWindow?.startBlockingActivityIndicator()
                 if let responseData = data {
                     do {
                         let action = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: AnyObject]
@@ -139,10 +138,12 @@ class RegistrationViewController: UIViewController {
                                 } else {
                                     ErrorToast(message)
                                 }
+                                UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()
                             }
                         } else if result?.lowercased() == "error".lowercased() {
                             ErrorToast(message ?? "")
                         }
+                        UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()
                     } catch {}
                 }
                 UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()

@@ -122,6 +122,10 @@ final class ProfileViewController: UIViewController, UINavigationControllerDeleg
     @objc fileprivate func logout() {
         APIHelper.shared.deleteTeam { success, message in
             if success {
+                HavaConstants.stage1Score = zero
+                HavaConstants.stage2Score = zero
+                HavaConstants.stage3Score = zero
+                HavaConstants.scoreRound = .zero
                 let nav = UINavigationController(rootViewController: LoginViewController())
                 appDelegate?.makeRootViewController(nav, withAnimation: true)
                 SuccessToast(message)

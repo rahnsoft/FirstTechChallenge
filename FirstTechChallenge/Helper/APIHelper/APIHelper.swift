@@ -262,6 +262,7 @@ final class APIHelper: NSObject {
         } catch {}
     }
 
+    //MARK: Save score details
     func saveScoreDetails(teamNumber: String, stage1: String = HavaConstants.stage1Score.description, stage2: String = HavaConstants.stage2Score.description, stage3: String = HavaConstants.stage3Score.description, totalScore: String = (HavaConstants.stage1Score + HavaConstants.stage2Score + HavaConstants.stage3Score).description, created: String = Date().getCurrentDate, scoreRound: String = HavaConstants.scoreRound.description, location: String, completion: @escaping (Bool, String) -> ()) {
         let score = TeamScores(context: context!)
         score.scoreTeamNumber = teamNumber
@@ -294,6 +295,7 @@ final class APIHelper: NSObject {
         }
     }
 
+    //MARK: - fetch all team scores
     func fetchScoreDetailsAll(completion: @escaping (Bool) -> ()) {
         let request: NSFetchRequest<TeamScores> = TeamScores.fetchRequest()
         do {
@@ -308,6 +310,7 @@ final class APIHelper: NSObject {
 }
 
 extension APIHelper {
+    //MARK: - get all scores API
     func getAllScores(_ completion: @escaping (_ result: [TeamScore], _ message: Error?) -> ()) {
         let task = URLSession(configuration: .default).dataTask(with: URL(string: HavaConstants.allScoresUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!) { data, _, error in
             DispatchQueue.main.async {
@@ -323,6 +326,7 @@ extension APIHelper {
                             } else {
                                 ErrorToast("Incorrect team Number")
                             }
+                            UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()
                         } catch {
                             completion([TeamScore](), error)
                         }
@@ -336,7 +340,7 @@ extension APIHelper {
         }
         task.resume()
     }
-
+//MARK - get all teams API
     func getAllTeams(_ completion: @escaping (_ result: [Team], _ message: Error?) -> ()) {
         let task = URLSession(configuration: .default).dataTask(with: URL(string: HavaConstants.allTeamUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!) { data, _, error in
             DispatchQueue.main.async {
@@ -365,6 +369,7 @@ extension APIHelper {
         task.resume()
     }
 
+    //MARK: - creat a team API
     func createTeam(teamid: String, name: String, location: String, completion: @escaping (_ result: Data?, _ error: Error?) -> ()) {
         let url = String(format: HavaConstants.createTeam, teamid, name, location).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let task = URLSession(configuration: .default).dataTask(with: URL(string: url)!) { data, _, error in
@@ -381,6 +386,7 @@ extension APIHelper {
         task.resume()
     }
 
+    //MARK:- get singel team API
     func getSingleTeam(teamid: String, completion: @escaping (_ result: Team?, _ error: Error?) -> ()) {
         UIApplication.shared.keyWindow?.startBlockingActivityIndicator()
         let url = String(format: HavaConstants.singleTeam, teamid).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -398,6 +404,7 @@ extension APIHelper {
                             } else {
                                 ErrorToast("Incorrect team Number")
                             }
+                            UIApplication.shared.keyWindow?.stopBlockingActivityIndicator()
                         } catch {
                             completion(Team(), error)
                             ErrorToast(error.localizedDescription)
@@ -413,6 +420,7 @@ extension APIHelper {
         task.resume()
     }
 
+    //MARK: - Submit scores API
     func submitScore(teamid: String, autonomous: String?, drivercontrolled: String?, endgame: String?, location: String?, completion: @escaping (_ result: Data?, _ error: Error?) -> ()) {
         let url = String(format: HavaConstants.submitScore, teamid, autonomous ?? "", drivercontrolled ?? "", endgame ?? "", location ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let task = URLSession(configuration: .default).dataTask(with: URL(string: url)!) { data, _, error in
